@@ -60,7 +60,7 @@ body{
 }
 
 .form-img{
-    background-image: url(../../../assets/signin.png);
+    background-image: url(signin.png);
     height: 250px;
     width: 250px;
     background-size: cover;
