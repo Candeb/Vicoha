@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap');
+/* font-family: 'Crimson Text', serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Saira Condensed', sans-serif;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    color: black
+}
+
+.section-container{
+    background-color: white;
+}
+
+/* header */
+
+.header-container{
+    position: sticky;
+    top: 0%;
+    z-index: 999;
+}
+
+.header{
+    margin: 0 auto;
+    max-width: 1300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.logo-container{
+    height: 100%;
+    display:flex;
+    align-items: center;
+    margin: 0 auto;
+} 
+
+/* end header */
+/* form */
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-data{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-data label{
+    font-size: 20px;
+    padding: 5px 0px;
+}
+
+.user-data input{
+        width: 240px;
+        border-radius: 10px;
+        border: 1px solid #80808091;
+        height: 30px;
+        padding: 5px 10px;
+        color: black;
+        font-weight: 800;
+}
+
+
+
+.guest a{
+    color: rgba(128, 128, 128, 0.555);
+    font-weight: 800;
+}
+
+.guest a:hover{
+    border-bottom: 2px solid rgba(128, 128, 128, 0.555);
+    cursor: pointer;
+}
+
+.btn-login{
+    padding: 7px 15px;
+    border-radius: 13px;
+    font-size: 15px;
+    background-color: rgb(0, 0, 0);
+    border: 3px double rgba(128, 128, 128, 0.781);
+}
+
+.btn-login a{
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+
+}
+
+.btn-login:hover{
+    font-weight: 700;
+    box-shadow: 1px 2px 3px black;
+}
+
+
+
+
+
+/* end form */
+
+/* footer */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+.footer-ls{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-social{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 28px;
+    align-items: center;
+    
+}
+
+.footer-social span{
+    cursor: pointer;
+}
+
+.underline:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 440px){
+    .footer-ls{
+        flex-direction: column;
+        gap: 1px;
+    }
+}
+
+/* end footer */
+    

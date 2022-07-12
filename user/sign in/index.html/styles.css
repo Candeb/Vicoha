@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200&display=swap');
+/* font-family: 'Crimson Text', serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Saira Condensed', sans-serif;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    color: black
+}
+
+.section-container{
+    background-color: white;
+}
+
+/* header */
+
+.header-container{
+    position: sticky;
+    top: 0%;
+    z-index: 999;
+}
+
+.header{
+    margin: 0 auto;
+    max-width: 1300px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.logo-container{
+    height: 100%;
+    display:flex;
+    align-items: center;
+    margin: 0 auto;
+} 
+
+/* end header */
+/* section sign in */
+
+.signin-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-img{
+    background-image: url(../../../assets/signin.png);
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 40%;
+}
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+.section-signin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (min-width: 600px){
+    .section-signin{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.form-signin{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.user-data{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3px 10px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-data input{
+    border-radius: 15px;
+    border: 1px solid grey;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+    color: black;
+    font-size: 16px;
+}
+
+.container-extra-data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 710px){
+    .form-img{
+        width: 350px;
+        height: 350px;
+    }
+}
+
+
+.extra-data-title{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 15px;
+}
+
+.extra-data{
+    display: flex;
+    gap: 5px;
+    justify-content: center; 
+    padding: 0px 20px;
+}
+
+.extra-data input{
+    width: 70px;
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding: 5px 10px;
+    color: black;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-signin{
+    border-radius: 15px;
+    border: 1px solid grey;
+    padding: 5px 30px;
+    cursor: pointer;
+   
+    background: black;
+    margin: 0 auto;
+}
+
+.btn-signin:hover{
+    box-shadow: 1px 3px 5px grey;
+    color: rgb(216, 213, 213);
+}
+
+.btn-signin a{
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+/* footer */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    
+    width: 100%;
+}
+
+.footer-ls{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-social{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 28px;
+    align-items: center;
+    
+}
+
+.footer-social span{
+    cursor: pointer;
+}
+
+.underline:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 440px){
+    .footer-ls{
+        flex-direction: column;
+        gap: 1px;
+    }
+}
+
+/* end footer */
+    
