@@ -55,6 +55,7 @@ body {
   justify-content: center;
   align-items: center;
   max-height: 70px;
+  transition: all 0.7s ease-in-out;
 }
 
 .header-container {
