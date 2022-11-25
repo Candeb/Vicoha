@@ -10,6 +10,10 @@
       src="https://kit.fontawesome.com/6ccaf93f00.js"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
   <body>
     <!-- header -->
@@ -20,54 +24,95 @@
         </div>
 
         <div class="ul-container">
+          <div class="addProductModal hidden"></div>
+
           <nav class="navbar">
-            <label for="toggle-menu"><i class="fas fa-bars"></i></label>
-            <input type="checkbox" id="toggle-menu" />
+            <div class="ls-icons">
+              <i class="fas fa-bars icon-menu hidden"></i>
+              <i class="fa-solid fa-cart-shopping btn-cart"></i>
+              <i class="fa-solid fa-user btn-user" id="btn-user"></i>
+            </div>
+
+            <!-- bars menu  -->
+            <ul class="bars-menu animate__animated animate__fadeInRight hidden">
+              <div class="container-icon-exit">
+                <i class="fa-solid fa-x icon-exit"></i>
+              </div>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#shop">Tienda</a></li>
+              <li><a href="#contact">Contacto</a></li>
+
+              <div class="user-options">
+                <li>
+                  <a href="user/login/index.html"
+                    >Ingresar <i class="fa-solid fa-right-to-bracket"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="user/sign in/index.html"
+                    >Registrarse <i class="fa-solid fa-user-plus"></i>
+                  </a>
+                </li>
+              </div>
+            </ul>
+            <div class="overlay"></div>
+
+            <!-- user menu -->
+            <div class="user-menu hidden">
+              <li>
+                <a href="user/login/index.html"
+                  >Ingresar <i class="fa-solid fa-right-to-bracket"></i
+                ></a>
+              </li>
+              <li>
+                <a href="user/sign in/index.html"
+                  >Registrarse <i class="fa-solid fa-user-plus"></i>
+                </a>
+              </li>
+            </div>
+
+            <!-- cart -->
+            <div class="cart">
+              <button class="button btn-closeCart">X</button>
+
+              <h3>Tus Productos</h3>
+              <div class="cart-productsContainer"></div>
+
+              <div class="cart-costoInfo">
+                <div class="subLine">
+                  <h4>Subtotal:</h4>
+                  <span class="subtotal"></span>
+                </div>
+                <div class="subLine">
+                  <h4>Envío:</h4>
+                  <span class="envio">Gratis</span>
+                </div>
+                <span class="separator"></span>
+                <div class="subLine">
+                  <h3>Total:</h3>
+                  <span class="total"></span>
+                </div>
+              </div>
+              <div class="cart-buttonContainer">
+                <button class="button btn-buy" id="btn-buy">COMPRAR</button>
+                <a href="#shop" class="btn-verMas">Ver más productos</a>
+              </div>
+            </div>
+            <!-- cart end -->
+
             <ul class="navbar-list">
               <li><a href="#">Inicio</a></li>
               <li><a href="#shop">Tienda</a></li>
               <li><a href="#contact">Contacto</a></li>
-              <li>
-                <a href="https://login-vicoha.vercel.app/" class="none-menu"
-                  >Iniciar sesión</a
-                >
-              </li>
-              <li>
-                <a href="https://signin-vicoha.vercel.app/" class="none-menu"
-                  >Registrarse</a
-                >
-              </li>
             </ul>
           </nav>
-          <div class="ls-icons">
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            <label for="user">
-              <div class="user-menu">
-                <i class="fa-solid fa-user"></i>
-              </div>
-            </label>
-            <input type="checkbox" name="user" id="user" class="none" />
-            <ul class="toggle-usermenu">
-              <li>
-                <a href="https://login-vicoha.vercel.app/" class="underline"
-                  >Iniciar sesión</a
-                >
-              </li>
-              <li>
-                <a href="https://signin-vicoha.vercel.app/" class="underline"
-                  >Registrarse</a
-                >
-              </li>
-            </ul>
-          </div>
         </div>
       </header>
     </div>
 
     <!-- hero  -->
     <div class="section-container">
-      <section class="section" id="hero">
+      <section class="section animate__animated animate__fadeIn" id="hero">
         <div class="slogan-container">
           <div class="text-container">
             <h1 class="none">Vicoha</h1>
@@ -77,7 +122,9 @@
 
           <div class="button-container">
             <button class="cta">
-              <span class="hover-underline-animation"> Quiero mi planta </span>
+              <span class="hover-underline-animation">
+                <a href="#shop">Quiero mi planta</a>
+              </span>
               <svg
                 id="arrow-horizontal"
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +151,7 @@
     <!-- payments -->
 
     <div class="section-container">
-      <section class="section">
+      <section class="section animate__animated animate__zoomIn">
         <div class="container-payments">
           <div class="payment">
             <span> <i class="fa-solid fa-dollar-sign"></i> </span>
@@ -134,66 +181,111 @@
     </div>
     <!-- payments end -->
 
+    <!-- destacados -->
+    <div class="section-container">
+      <section class="section" id="destacados">
+        <div class="destacados-container">
+          <h3>Destacados</h3>
+          <div class="products-destacados-container"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- destacados end -->
+
     <!-- products -->
     <div class="section-container">
       <section class="section" id="shop">
         <div class="shop-container">
           <h3>Tienda</h3>
-          <div class="products-container">
-            <div class="product">
-              <img src="assets/amazonita.jpg" alt="Amazonita" />
-              <p class="product-title">Amazonita</p>
-              <span class="product-price">$11.500</span>
-              <button class="btn-shop">Agregar al carrito</button>
+          <div class="categoryContainer">
+            <div class="catTitle">
+              <h4>Categorías</h4>
             </div>
-            <div class="product">
-              <img src="assets/selenita.jpg" alt="Selenita" />
-              <p class="product-title">Selenita</p>
-              <span class="product-price">$28.000</span>
-              <button class="btn-shop">Agregar al carrito</button>
-            </div>
-            <div class="product">
-              <img src="assets/lapislazuli.jpg" alt="Lapislázuli" />
-              <p class="product-title">Lapislázuli</p>
-              <span class="product-price">$17.800</span>
-              <button class="btn-shop">Agregar al carrito</button>
-            </div>
-            <div class="product">
-              <img src="assets/tanzanita.jpg" alt="Tanzanita" />
-              <p class="product-title">Tanzanita</p>
-              <span class="product-price">$20.000</span>
-              <button class="btn-shop">Agregar al carrito</button>
-            </div>
-            <div class="product">
-              <img src="assets/citrino.jpg" alt="Citrino" />
-              <p class="product-title">Citrino</p>
-              <span class="product-price">$15.500</span>
-              <button class="btn-shop">Agregar al carrito</button>
-            </div>
-            <div class="product">
-              <img src="assets/prasiolita.jpg" alt="Prasiolita" />
-              <p class="product-title">Prasiolita</p>
-              <span class="product-price">$16.800</span>
-              <button class="btn-shop">Agregar al carrito</button>
+            <div class="catCardContainer">
+              <div class="catCard category catActive" data-category="Populares">
+                <div class="catImg">
+                  <img src="assets/populares.png" />
+                </div>
+                <p>Populares</p>
+                <div class="colorDetail"></div>
+              </div>
+
+              <div class="catCardContainer">
+                <div
+                  class="catCard category catActive"
+                  data-category="Piramidal"
+                >
+                  <div class="catImg">
+                    <img src="assets/piramidal.png" />
+                  </div>
+                  <p>Piramidal</p>
+                  <div class="colorDetail"></div>
+                </div>
+              </div>
+              <div class="catCardContainer">
+                <div
+                  class="catCard category catActive"
+                  data-category="Cilindrica"
+                >
+                  <div class="catImg">
+                    <img src="assets/cilindrica.png" />
+                  </div>
+                  <p>Cilindrica</p>
+                  <div class="colorDetail"></div>
+                </div>
+              </div>
+              <div class="catCardContainer">
+                <div class="catCard category catActive" data-category="Gota">
+                  <div class="catImg">
+                    <img src="assets/gota.png" />
+                  </div>
+                  <p>Gota</p>
+                  <div class="colorDetail"></div>
+                </div>
+              </div>
+              <div class="catCardContainer">
+                <div class="catCard category catActive" data-category="Cubica">
+                  <div class="catImg">
+                    <img src="assets/cubo.png" />
+                  </div>
+                  <p>Cubica</p>
+                  <div class="colorDetail"></div>
+                </div>
+              </div>
+              <div class="catCardContainer">
+                <div
+                  class="catCard category catActive"
+                  data-category="Hexagono"
+                >
+                  <div class="catImg">
+                    <img src="assets/hexagono.png" />
+                  </div>
+                  <p>Hexagono</p>
+                  <div class="colorDetail"></div>
+                </div>
+              </div>
             </div>
 
-            <div class="product">
-              <img src="assets/calcedonia.jpg" alt="Calcedonia" />
-              <p class="product-title">Calcedonia</p>
-              <span class="product-price">$13.500</span>
-              <button class="btn-shop">Agregar al carrito</button>
+            <h5 class="prodSubTitle">Populares</h5>
+
+            <div
+              class="products-container animate_animated animate__fadeInDown"
+              style="
+                font-size: 30px;
+                letter-spacing: 5px;
+                font-weight: bolder;
+                text-transform: uppercase;
+              "
+            >
+              Coming Soon
             </div>
-            <div class="product">
-              <img src="assets/turmalina.jpg" alt="Turmalina" />
-              <p class="product-title">Turmalina</p>
-              <span class="product-price">$23.500</span>
-              <button class="btn-shop disabled">Agregar al carrito</button>
-              <span class="no-stock">Agotado</span>
-            </div>
+            >
           </div>
         </div>
       </section>
     </div>
+    <!-- end products -->
 
     <div class="section-container">
       <section class="section" id="contact">
@@ -248,5 +340,8 @@
         </div>
       </footer>
     </div>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/main.js" defer="defer"></script>
   </body>
 </html>
